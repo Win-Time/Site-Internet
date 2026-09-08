@@ -6,6 +6,7 @@
 <title>Win Time — Notre site arrive bientôt</title>
 <meta name="description" content="Le site Win Time est en construction. En attendant, découvrez nos offres et suivez les aventures sur LinkedIn.">
 <meta name="theme-color" content="#E13356">
+<link rel="icon" href="assets/win_time_80_logo.svg" type="image/svg+xml">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Win Time — Notre site arrive bientôt">
@@ -90,18 +91,19 @@
     text-align:center;
   }
 
-  /* ───────── Logo ─────────
-     Remplacer tout le bloc .logo par :
-     <img class="logo-img" src="assets/logo.svg" alt="Win Time">
-     dès que le fichier logo définitif est disponible. */
+  /* ───────── Logo ───────── */
   .logo{
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:10px;
+    gap:8px;
     margin-bottom:34px;
   }
-  .logo svg{display:block;width:96px;height:auto}
+  .logo img{
+    display:block;
+    width:112px;
+    height:auto;
+  }
   .logo .wordmark{
     font-family:var(--font-script);
     font-size:38px;
@@ -109,7 +111,6 @@
     color:var(--wt-white);
     letter-spacing:.5px;
   }
-  .logo-img{display:block;width:180px;height:auto;margin:0 auto 34px}
 
   /* ───────── Badge incliné ───────── */
   .badge{
@@ -216,7 +217,7 @@
   @media (max-width:640px){
     .screen{padding:44px 20px 88px}
     .star{font-size:42px;top:0;right:0}
-    .logo svg{width:80px}
+    .logo img{width:92px}
     .logo .wordmark{font-size:32px}
     .cta{font-size:16px;padding:13px 24px}
   }
@@ -232,31 +233,10 @@
 
   <div class="inner">
 
-    <!-- ▼▼ LOGO — bloc à remplacer par le fichier définitif ▼▼ -->
     <div class="logo">
-      <svg viewBox="0 0 120 132" role="img" aria-label="Win Time">
-        <!-- couronne du chronomètre -->
-        <rect x="50" y="6" width="20" height="12" rx="4" fill="#FFFFFF"/>
-        <rect x="55" y="0" width="10" height="9" rx="3" fill="#FFFFFF"/>
-        <!-- boîtier -->
-        <circle cx="60" cy="76" r="46" fill="#FFFFFF"/>
-        <circle cx="60" cy="76" r="38" fill="none" stroke="#D93333" stroke-width="5"/>
-        <!-- silhouette dynamique (course) -->
-        <g fill="#E42761">
-          <circle cx="66" cy="55" r="7"/>
-          <path d="M62 65c6-4 13-3 17 2l8 10-7 5-6-8-5 7 8 12-6 16-8-3 5-13-9-13c-3-5-2-11 3-15z"/>
-          <path d="M48 78l-9 4 3 7 11-5z"/>
-        </g>
-        <!-- lignes de vitesse -->
-        <g stroke="#E8722F" stroke-width="4" stroke-linecap="round" opacity=".85">
-          <line x1="14" y1="62" x2="30" y2="62"/>
-          <line x1="8"  y1="76" x2="26" y2="76"/>
-          <line x1="14" y1="90" x2="30" y2="90"/>
-        </g>
-      </svg>
+      <img src="assets/win_time_80_logo_bw.svg" alt="Win Time" width="200" height="200">
       <span class="wordmark">Win Time</span>
     </div>
-    <!-- ▲▲ fin du bloc logo ▲▲ -->
 
     <span class="badge">site en construction</span>
 
