@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Win Time — Notre site arrive bientôt</title>
+<meta name="description" content="Le site Win Time est en construction. En attendant, découvrez nos offres et suivez les aventures sur LinkedIn.">
+<meta name="theme-color" content="#E13356">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Win Time — Notre site arrive bientôt">
+<meta property="og:description" content="Le site est en construction. Découvrez nos offres et suivez les aventures sur LinkedIn.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Questrial&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* ── Couleurs ── */
+    --wt-magenta:#E42761;
+    --wt-pink:#E13356;
+    --wt-orange:#E8722F;
+    --wt-red:#D93333;
+    --wt-script:#ED4C67;
+    --wt-yellow:#F8CD1E;
+    --wt-ink:#3D3D3C;
+    --wt-white:#FFFFFF;
+    --wt-blush:#FDF4F0;
+    /* ── Dégradés ── */
+    --wt-grad:linear-gradient(160deg,#E42761 0%,#E8722F 100%);
+    --wt-grad-post:linear-gradient(170deg,#E13356 0%,#DB4841 55%,#D55A30 100%);
+    /* ── Typo ── */
+    --font-script:'Yellowtail',cursive;
+    --font-title:'Questrial',sans-serif;
+    --font-body:'Open Sans',sans-serif;
+    /* ── Formes ── */
+    --radius-card:24px;
+    --radius-pill:999px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--font-body);
+    color:var(--wt-white);
+    background:var(--wt-pink);
+    line-height:1.6;
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* ───────── Écran dégradé ───────── */
+  .screen{
+    position:relative;
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:56px 24px 96px;
+    background:var(--wt-grad-post);
+    overflow:hidden;
+    isolation:isolate;
+  }
+  /* halos lumineux discrets */
+  .screen::before,
+  .screen::after{
+    content:'';
+    position:absolute;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:-1;
+  }
+  .screen::before{
+    width:620px;height:620px;
+    top:-260px;left:-200px;
+    background:radial-gradient(circle,rgba(255,255,255,.16) 0%,rgba(255,255,255,0) 70%);
+  }
+  .screen::after{
+    width:520px;height:520px;
+    bottom:-220px;right:-160px;
+    background:radial-gradient(circle,rgba(248,205,30,.20) 0%,rgba(248,205,30,0) 70%);
+  }
+
+  .inner{
+    position:relative;
+    width:100%;
+    max-width:640px;
+    text-align:center;
+  }
+
+  /* ───────── Logo ─────────
+     Remplacer tout le bloc .logo par :
+     <img class="logo-img" src="assets/logo.svg" alt="Win Time">
+     dès que le fichier logo définitif est disponible. */
+  .logo{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    margin-bottom:34px;
+  }
+  .logo svg{display:block;width:96px;height:auto}
+  .logo .wordmark{
+    font-family:var(--font-script);
+    font-size:38px;
+    line-height:1;
+    color:var(--wt-white);
+    letter-spacing:.5px;
+  }
+  .logo-img{display:block;width:180px;height:auto;margin:0 auto 34px}
+
+  /* ───────── Badge incliné ───────── */
+  .badge{
+    display:inline-block;
+    background:var(--wt-white);
+    color:var(--wt-script);
+    font-family:var(--font-title);
+    font-size:15px;
+    padding:5px 16px;
+    transform:rotate(-3deg);
+    box-shadow:0 2px 6px rgba(0,0,0,.12);
+    margin-bottom:22px;
+  }
+
+  /* ───────── Titre & texte ───────── */
+  h1{
+    font-family:var(--font-script);
+    font-weight:400;
+    font-size:clamp(38px,7vw,60px);
+    line-height:1.15;
+    text-shadow:0 2px 10px rgba(0,0,0,.10);
+    text-wrap:balance;
+  }
+  /* double trait manuscrit sous le titre */
+  .rule{
+    width:150px;height:4px;
+    background:var(--wt-white);
+    border-radius:2px;
+    margin:22px auto 26px;
+    position:relative;
+    opacity:.95;
+  }
+  .rule::after{
+    content:'';
+    position:absolute;top:7px;left:30px;
+    width:90px;height:3px;
+    background:var(--wt-white);
+    border-radius:2px;
+  }
+  .lead{
+    font-family:var(--font-title);
+    font-size:clamp(17px,2.4vw,20px);
+    line-height:1.55;
+    max-width:46ch;
+    margin:0 auto 38px;
+    text-wrap:balance;
+    opacity:.97;
+  }
+
+  /* ───────── CTA LinkedIn ───────── */
+  .cta{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    background:var(--wt-white);
+    color:var(--wt-script);
+    font-family:var(--font-title);
+    font-size:17px;
+    text-decoration:none;
+    padding:14px 30px;
+    border-radius:var(--radius-pill);
+    box-shadow:0 8px 22px rgba(0,0,0,.18);
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .cta img{width:24px;height:24px;display:block;flex:none}
+  .cta .arrow{transition:transform .18s ease}
+  .cta:hover,.cta:focus-visible{
+    transform:translateY(-2px);
+    box-shadow:0 12px 28px rgba(0,0,0,.22);
+  }
+  .cta:hover .arrow,.cta:focus-visible .arrow{transform:translateX(4px)}
+  .cta:focus-visible{outline:3px solid var(--wt-yellow);outline-offset:3px}
+
+  /* ───────── Étoile d'accent ───────── */
+  .star{
+    position:absolute;
+    top:6px;right:2%;
+    font-size:56px;
+    transform:rotate(12deg);
+    filter:drop-shadow(2px 4px 3px rgba(0,0,0,.18));
+    pointer-events:none;
+    user-select:none;
+  }
+
+  /* ───────── Vague blanche organique ───────── */
+  .wave{
+    position:absolute;
+    left:0;right:0;bottom:-1px;
+    width:100%;
+    height:70px;
+    display:block;
+  }
+
+  /* ───────── Pied de page ───────── */
+  footer{
+    background:var(--wt-white);
+    color:var(--wt-ink);
+    text-align:center;
+    font-size:14px;
+    padding:20px 24px 26px;
+  }
+  footer b{font-family:var(--font-title);font-weight:400}
+
+  @media (max-width:640px){
+    .screen{padding:44px 20px 88px}
+    .star{font-size:42px;top:0;right:0}
+    .logo svg{width:80px}
+    .logo .wordmark{font-size:32px}
+    .cta{font-size:16px;padding:13px 24px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .cta,.cta .arrow{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<main class="screen">
+  <div class="star" aria-hidden="true">⭐</div>
+
+  <div class="inner">
+
+    <!-- ▼▼ LOGO — bloc à remplacer par le fichier définitif ▼▼ -->
+    <div class="logo">
+      <svg viewBox="0 0 120 132" role="img" aria-label="Win Time">
+        <!-- couronne du chronomètre -->
+        <rect x="50" y="6" width="20" height="12" rx="4" fill="#FFFFFF"/>
+        <rect x="55" y="0" width="10" height="9" rx="3" fill="#FFFFFF"/>
+        <!-- boîtier -->
+        <circle cx="60" cy="76" r="46" fill="#FFFFFF"/>
+        <circle cx="60" cy="76" r="38" fill="none" stroke="#D93333" stroke-width="5"/>
+        <!-- silhouette dynamique (course) -->
+        <g fill="#E42761">
+          <circle cx="66" cy="55" r="7"/>
+          <path d="M62 65c6-4 13-3 17 2l8 10-7 5-6-8-5 7 8 12-6 16-8-3 5-13-9-13c-3-5-2-11 3-15z"/>
+          <path d="M48 78l-9 4 3 7 11-5z"/>
+        </g>
+        <!-- lignes de vitesse -->
+        <g stroke="#E8722F" stroke-width="4" stroke-linecap="round" opacity=".85">
+          <line x1="14" y1="62" x2="30" y2="62"/>
+          <line x1="8"  y1="76" x2="26" y2="76"/>
+          <line x1="14" y1="90" x2="30" y2="90"/>
+        </g>
+      </svg>
+      <span class="wordmark">Win Time</span>
+    </div>
+    <!-- ▲▲ fin du bloc logo ▲▲ -->
+
+    <span class="badge">site en construction</span>
+
+    <h1>Notre site n'est pas encore prêt</h1>
+    <div class="rule" aria-hidden="true"></div>
+
+    <p class="lead">
+      Ça sera bientôt disponible, mais pour l'instant vous pouvez découvrir
+      nos offres et suivre les aventures sur LinkedIn.
+    </p>
+
+    <a class="cta"
+       href="https://www.linkedin.com/in/vanessa-cauchois"
+       target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/linkedin.svg" alt="" aria-hidden="true">
+      <span>Voir le LinkedIn</span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+
+  <!-- vague blanche organique en bas de section dégradée -->
+  <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#FFFFFF" d="M0,34 C180,68 340,4 560,18 C780,32 900,66 1120,52 C1280,42 1360,18 1440,26 L1440,70 L0,70 Z"/>
+  </svg>
+</main>
+
+<footer>
+  <b>Win Time</b> — assistance administrative
+</footer>
+
+</body>
+</html>
